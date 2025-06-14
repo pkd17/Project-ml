@@ -1,32 +1,65 @@
-# Project-ml
-object detection distance measure from camera to object and object  to object and accuracy of prediction
-# object-identifier-and-camera-to-object-and-object-to-object-distance-estimator
-Identifies different object classes(coco dataset), calculates camera to object distance and object to object distance.
+# 🚀 Project-ML: Object Identifier & Distance Estimator
 
-Part 1: detects objectes defined in https://cocodataset.org/#home along with confidence score of each object.
-SSD MobileNet architecture of dnn used.
+Ever wondered how far something is from your camera? Or how far two objects are from each other — all using just a regular webcam?  
+This project does exactly that — with a mix of computer vision, math, and a bit of ML magic.
 
-Part 2: calculates distance between camera to object.
-Haar-cascade-classifier(for frontal face detection) used.
-for this part, instead of lena.png, use a captured image at a distance of 30 Inches(can be changed) from camera and measure the face width at that point.
-similar to the below description:
+---
 
-![image](https://user-images.githubusercontent.com/75139237/123779777-28037d00-d8f0-11eb-94fc-f344e204eb8f.png)
+## 🧠 What It Does
 
-The output for Part 1 and Part 2 is shown below:
+### 🔍 Part 1: Object Detection  
+- Detects multiple object classes using the **COCO dataset**.  
+- Outputs bounding boxes **with confidence scores**.  
+- Built using **SSD MobileNet** — fast, light, and solid for real-time detection.
 
-https://user-images.githubusercontent.com/75139237/123778696-fd64f480-d8ee-11eb-8e1d-39fba3dbdef5.mp4
+🎯 Example:  
+Detects things like people, bottles, chairs, etc. in real-time.
 
-Part 3: calculates the midpoint of each bounding box and euclidean distance is calculated between two object midpoints:
+---
 
-![image](https://user-images.githubusercontent.com/75139237/123779239-985dce80-d8ef-11eb-9523-df63967d8958.png)
+### 📏 Part 2: Camera-to-Object Distance Estimation  
+- Uses **Haar Cascade** (frontal face detection) for face-based distance calibration.  
+- Calibrates using an image taken at a known distance (e.g., **30 inches**) to calculate object distance using simple math.  
+- Replace `lena.png` with your own calibration image — it's more accurate that way.
 
-For single object identified: 
+🖼️ Reference Diagram:  
+![Distance Estimation](https://user-images.githubusercontent.com/75139237/123779777-28037d00-d8f0-11eb-94fc-f344e204eb8f.png)
 
-![image](https://user-images.githubusercontent.com/75139237/123779352-b4fa0680-d8ef-11eb-84ca-e051562bb19e.png)
+🎬 Output Preview:
+<video src="https://user-images.githubusercontent.com/75139237/123778696-fd64f480-d8ee-11eb-8e1d-39fba3dbdef5.mp4" controls width="100%"></video>
 
-Final output:
+---
 
-https://user-images.githubusercontent.com/75139237/123779034-5e8cc800-d8ef-11eb-9d60-da0dc9882615.mp4
+### 📐 Part 3: Object-to-Object Distance  
+- Calculates the **midpoint** of each detected object’s bounding box.  
+- Uses **Euclidean distance** to measure how far two objects are from each other in the frame.
 
-![image](https://user-images.githubusercontent.com/75139237/123779525-e2df4b00-d8ef-11eb-9364-f041327a39ec.png)
+🖼️ Multi-object Example:  
+![Multi-object](https://user-images.githubusercontent.com/75139237/123779239-985dce80-d8ef-11eb-9523-df63967d8958.png)
+
+🖼️ Single-object Output:  
+![Single-object](https://user-images.githubusercontent.com/75139237/123779352-b4fa0680-d8ef-11eb-84ca-e051562bb19e.png)
+
+🎬 Final Output:
+<video src="https://user-images.githubusercontent.com/75139237/123779034-5e8cc800-d8ef-11eb-9d60-da0dc9882615.mp4" controls width="100%"></video>
+
+📸 Final Frame:  
+![Final Frame](https://user-images.githubusercontent.com/75139237/123779525-e2df4b00-d8ef-11eb-9364-f041327a39ec.png)
+
+---
+
+## 🛠️ Built With
+
+- **Python**
+- **OpenCV**
+- **COCO Dataset**
+- **Haar Cascade Classifiers**
+- **SSD MobileNet**
+
+---
+
+## 💡 Cool Use Cases
+- Social distancing tracker  
+- Smart surveillance systems  
+- AR object placement accuracy  
+- Robotics vision applications
